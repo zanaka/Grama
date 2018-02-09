@@ -1,0 +1,12 @@
+spec/dummy
+spec/examples.txt
+.sass-cache
+coverage
+Gemfile.lock
+*.swp
+.rvmrc
+.ruby-gemsets
+.ruby-version
+.bundle
+pkg
+vendor

@@ -1,0 +1,17 @@
+script: "bundle exec rake"
+rvm:
+  - 2.1.10
+  - 2.2.5
+  - 2.3.1
+gemfile:
+  - gemfiles/rails_4.1.gemfile
+  - gemfiles/rails_4.2.gemfile
+  - gemfiles/rails_5.0.gemfile
+matrix:
+  exclude:
+    - rvm: 2.1.10
+      gemfile: gemfiles/rails_5.0.gemfile
+notifications:
+  email:
+    - brian@spreecommerce.com
+    - ryan@spreecommerce.com

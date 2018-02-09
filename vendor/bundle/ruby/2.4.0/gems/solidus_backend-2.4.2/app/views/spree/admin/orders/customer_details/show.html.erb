@@ -1,0 +1,27 @@
+<%= render partial: 'spree/admin/shared/order_tabs', locals: { current: 'Customer Details' } %>
+
+<% admin_breadcrumb(Spree.t(:customer_details)) %>
+
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:back_to_orders_list), admin_orders_path %></li>
+<% end %>
+
+
+<main class="col-5">
+  <section>
+    <%= content_tag :h4, Spree.t(:account) %>
+    <%= Spree.t(:email) %>: <%= @order.email %><br>
+    <%= Spree.t(:guest_checkout) %>: <%= @order.user ? Spree.t(:yes) : Spree.t(:no) %>
+  </section>
+
+  <section>
+    <%= content_tag :h4, Spree.t(:billing_address) %>
+    <%= render "spree/admin/shared/address", address: @order.bill_address %>
+  </section>
+
+  <section>
+    <%= content_tag :h4, Spree.t(:shipping_address) %>
+    <%= render "spree/admin/shared/address", address: @order.ship_address %>
+  </section>
+</main>
